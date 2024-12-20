@@ -10,8 +10,8 @@ canvas.height = innerHeight
 let points = []
 
 let boundary = new Boundary(innerWidth/2, innerHeight/2, innerWidth, innerHeight)
-let qt = new QuadTree(boundary, 4)
-for (let i = 1; i < innerWidth; i += 5) {
+let qt = new QuadTree(boundary, 2)
+for (let i = 1; i < innerWidth; i ++) {
   let p = new Point(i*Math.random(), i*Math.random() , c)
   qt.insert(p)
 
@@ -22,19 +22,19 @@ for (let i = 1; i < innerWidth; i += 5) {
 console.log(qt)
 // console.log(qt.find(new Point(4, 4)))
 
-points.map(e => {
-  e.draw()
-})
+// points.map(e => {
+//   e.draw()
+// })
 
 const animate = () => {
   requestAnimationFrame(animate)
-  c.fillStyle = "black"
+  c.fillStyle = "#071e3d"
   c.fillRect(0,0,canvas.width, canvas.height)
 
   
-points.map(e => {
-  e.update()
-})
+// points.map(e => {
+//   e.update()
+// })
 
 qt.display()
 

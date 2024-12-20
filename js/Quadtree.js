@@ -7,7 +7,7 @@ export class Point {
     }
     draw(context) {
         c.beginPath();
-        c.fillStyle = "white";
+        c.fillStyle = "#1f4287";
         c.arc(this.x, this.y, 3, 0, 2 * Math.PI);
         c.fill();
         c.stroke();
@@ -34,7 +34,7 @@ export class Boundary {
     }
     draw(context) {
         c.beginPath();
-        c.strokeStyle = "white";
+        c.strokeStyle = "#21e6c1";
         c.rect(this.x - this.w, this.y - this.h, this.w * 2, this.h * 2);
         c.stroke();
     }
