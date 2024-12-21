@@ -8,12 +8,14 @@ export class Point {
     draw(context) {
         c.beginPath();
         c.fillStyle = "#1f4287";
-        c.arc(this.x, this.y, 3, 0, 2 * Math.PI);
+        c.arc(this.x, this.y, .5, 0, 2 * Math.PI);
         c.fill();
         c.stroke();
     }
     update(context) {
         this.draw();
+        this.x += Math.random() * 20
+        this.y += Math.random() * 20
     }
 }
 
@@ -33,9 +35,14 @@ export class Boundary {
         );
     }
     draw(context) {
+        c.shadowColor = "green";
+        c.shadowBlur = 30;
+        
         c.beginPath();
         c.strokeStyle = "#21e6c1";
+        
         c.rect(this.x - this.w, this.y - this.h, this.w * 2, this.h * 2);
+        c.lineWidth = 1.3
         c.stroke();
     }
 }
